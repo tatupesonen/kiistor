@@ -2,6 +2,10 @@
 name = "kiistor"
 version = "0.1.7"
 edition = "2021"
+author = "Tatu Pesonen <tatu@narigon.dev>"
+description = "A small utility for loading game keys in/out of a PostgreSQL database"
+repository = "https://github.com/tatupesonen/kiistor"
+license-file = "LICENSE"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
