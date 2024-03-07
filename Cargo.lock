@@ -237,17 +237,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "98cc8fbded0c607b7ba9dd60cd98df59af97e84d24e49c8557331cfc26d301ce"
 
 [[package]]
-name = "codeinv"
-version = "0.1.0"
-dependencies = [
- "clap",
- "colored",
- "sqlx",
- "tabled",
- "tokio",
-]
-
-[[package]]
 name = "colorchoice"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -627,6 +616,17 @@ name = "itoa"
 version = "1.0.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b1a46d1a171d865aa5f83f92695765caa047a9b4cbae2cbf37dbd613a793fd4c"
+
+[[package]]
+name = "kiistor"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "colored",
+ "sqlx",
+ "tabled",
+ "tokio",
+]
 
 [[package]]
 name = "lazy_static"
