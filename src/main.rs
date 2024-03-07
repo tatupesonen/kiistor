@@ -179,7 +179,7 @@ async fn main() -> Result<()> {
     dotenvy::dotenv()?;
     let db_url = match std::env::var("DATABASE_URL") {
         Ok(s) => {
-            if s == "" {
+            if s.is_empty() {
                 exit_with_message("Missing DATABASE_URL environment variable.");
             }
             s
@@ -212,10 +212,6 @@ async fn main() -> Result<()> {
 fn exit_with_message(message: &str) -> ! {
     eprintln!("{}", message.red());
     exit(1);
-}
-
-fn info(message: &str) {
-    println!("{}", message.green());
 }
 
 fn warn(message: &str) {
