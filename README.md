@@ -1,20 +1,23 @@
 <p align="center">
   <a href="https://github.com/tatupesonen/kiistor">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="">
-      <img src="" alt="Storybook" width="400" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/tatupesonen/kiistor/assets/7150217/89625127-4602-4bff-9186-3c5b8417f305">
+      <img src="https://github.com/tatupesonen/kiistor/assets/7150217/89625127-4602-4bff-9186-3c5b8417f305" alt="kiistor" />
     </picture>
   </a>
-</p>
+
 
 Small utility written in Rust designed to facilitate the loading of game keys in and out of a PostgreSQL database. It provides a simple command-line interface for managing them.
+</p>
+
+[![Deploy](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml/badge.svg)](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml)
 
 ## Features
 - **Addition and Retrieval:** Allows adding new game keys to the database and retrieving existing keys.
 - **Easy-to-Use Interface:** Provides a user-friendly command-line interface for interacting with the utility.
 
 ## Installation
-Grab the latest release for your platform from the [releases](https://github.com/octo-org/octo-repo/releases/latest) page
+Grab the latest release for your platform from the [releases](https://github.com/tatupesonen/kiistor/releases/latest) page
 
 ## Usage
 
