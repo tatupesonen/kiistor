@@ -176,7 +176,6 @@ ORDER BY
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    dotenvy::dotenv()?;
     let db_url = match std::env::var("DATABASE_URL") {
         Ok(s) => {
             if s.is_empty() {

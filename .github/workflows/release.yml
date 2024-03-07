@@ -14,17 +14,17 @@ jobs:
       matrix:
         # You can add more, for any target you'd like!
         include:
-          - build: linux
+          - build: linux-musl
             os: ubuntu-latest
             target: x86_64-unknown-linux-musl
 
-          # - build: macos
-          #   os: macos-latest
-          #   target: x86_64-apple-darwin
+          - build: linux-gnu
+            os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
 
-          - build: windows-gnu
+          - build: windows-msvc
             os: windows-latest
-            target: x86_64-pc-windows-gnu
+            target: x86_64-pc-windows-msvc
     steps:
     - name: Clone repository
       uses: actions/checkout@v3
