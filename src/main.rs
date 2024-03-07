@@ -38,6 +38,8 @@ enum Commands {
     },
     /// List codes in the database
     List,
+    /// Perform database migrations. You usually need to only do this once.
+    Migrate,
 }
 
 async fn create_key_export(keys: Vec<String>, collection_name: &str) -> Result<PathBuf> {
@@ -190,19 +192,20 @@ async fn main() -> Result<()> {
 
     let cli = Cli::parse();
 
-    let migration_status = sqlx::migrate!().run(&conn).await;
-    match migration_status {
-        Ok(_) => {}
-        Err(err) => {
-            eprintln!("Migration error: {err}");
-            exit(1);
-        }
-    }
-
     match cli.command {
         Commands::Get { count, title } => get_codes(&conn, &title, count).await?,
         Commands::Load { file, title } => load_codes(&conn, &file, &title).await?,
         Commands::List => list_codes(&conn).await?,
+        Commands::Migrate => {
+            let migration_status = sqlx::migrate!().run(&conn).await;
+            match migration_status {
+                Ok(_) => {}
+                Err(err) => {
+                    eprintln!("Migration error: {err}");
+                    exit(1);
+                }
+            }
+        }
     }
 
     Ok(())
