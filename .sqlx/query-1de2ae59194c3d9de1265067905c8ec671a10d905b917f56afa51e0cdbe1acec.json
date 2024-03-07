@@ -1,0 +1,23 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE codes SET is_used = true WHERE code IN (SELECT code FROM codes where collection_id = $1 AND is_used = false LIMIT $2) returning code",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "code",
+        "type_info": "Text"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Int4",
+        "Int8"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "1de2ae59194c3d9de1265067905c8ec671a10d905b917f56afa51e0cdbe1acec"
+}

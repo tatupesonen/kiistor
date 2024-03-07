@@ -1,0 +1,38 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n    SELECT \n    title, \n    COUNT(codes.collection_id) AS total_keys,\n    SUM(CASE WHEN codes.is_used = true THEN 1 ELSE 0 END) AS used_keys,\n    SUM(CASE WHEN codes.is_used = false THEN 1 ELSE 0 END) AS unused_keys\nFROM \n    codes \nLEFT JOIN \n    collections ON codes.collection_id = collections.id \nGROUP BY \n    collection_id, title \nORDER BY \n    total_keys;\n    ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "title",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 1,
+        "name": "total_keys",
+        "type_info": "Int8"
+      },
+      {
+        "ordinal": 2,
+        "name": "used_keys",
+        "type_info": "Int8"
+      },
+      {
+        "ordinal": 3,
+        "name": "unused_keys",
+        "type_info": "Int8"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      null,
+      null,
+      null
+    ]
+  },
+  "hash": "1729c237cd1243e0ef544f6ba7b2388219214b4da3535b5f67a871152e0a9c69"
+}
