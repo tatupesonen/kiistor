@@ -5,9 +5,12 @@
       <img src="https://github.com/tatupesonen/kiistor/assets/7150217/89625127-4602-4bff-9186-3c5b8417f305" alt="kiistor" />
     </picture>
   </a>
-  
+
+
 Small utility written in Rust designed to facilitate the loading of game keys in and out of a PostgreSQL database. It provides a simple command-line interface for managing them.
 </p>
+
+[![Deploy](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml/badge.svg)](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml)
 
 ## Features
 - **Addition and Retrieval:** Allows adding new game keys to the database and retrieving existing keys.
