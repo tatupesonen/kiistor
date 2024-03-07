@@ -176,9 +176,18 @@ ORDER BY
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    let conn = PgPool::connect("mysql://root:secret@localhost/codes")
-        .await
-        .unwrap();
+    dotenvy::dotenv()?;
+    let db_url = match std::env::var("DATABASE_URL") {
+        Ok(s) => {
+            if s == "" {
+                exit_with_message("Missing DATABASE_URL environment variable.");
+            }
+            s
+        }
+        Err(_) => exit_with_message("Missing DATABASE_URL environment variable."),
+    };
+
+    let conn = PgPool::connect(&db_url).await.unwrap();
 
     let cli = Cli::parse();
 
