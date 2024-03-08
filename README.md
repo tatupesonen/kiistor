@@ -20,6 +20,10 @@ kiistor (_/ˈkiːstɔr/, KEE-stor_) is a small utility written in Rust designed 
 ## Installation
 Grab the latest release for your platform from the [releases](https://github.com/tatupesonen/kiistor/releases/latest) page
 
+## Demo
+![demo3](https://github.com/tatupesonen/kiistor/assets/7150217/82383c34-98c9-4cd9-828e-cc3f29f2756a)
+
+
 ## Usage
 
 - **Get keys by title:**
