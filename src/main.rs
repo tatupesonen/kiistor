@@ -92,13 +92,14 @@ async fn get_codes(database: &PgPool, collection_name: &str, count: i64) -> Resu
 async fn load_codes(database: &PgPool, path: &PathBuf, collection_name: &str) -> Result<()> {
     let file = std::fs::File::open(path)?;
     let reader = std::io::BufReader::new(file);
+    let mut tx = database.begin().await?;
 
     // Check if collection exists
     let found_coll = sqlx::query!(
         "select * from collections where title = $1",
         collection_name
     )
-    .fetch_optional(database)
+    .fetch_optional(&mut *tx)
     .await?;
 
     let collection_id = match found_coll {
@@ -113,7 +114,7 @@ async fn load_codes(database: &PgPool, path: &PathBuf, collection_name: &str) ->
                 "INSERT into collections (title) VALUES ($1) returning id",
                 collection_name
             )
-            .fetch_one(database)
+            .fetch_one(&mut *tx)
             .await?;
             row.id
         }
@@ -125,10 +126,11 @@ async fn load_codes(database: &PgPool, path: &PathBuf, collection_name: &str) ->
         sqlx::query(q)
             .bind(line.unwrap().trim())
             .bind(collection_id)
-            .execute(database)
+            .execute(&mut *tx)
             .await?;
         count += 1;
     }
+    tx.commit().await?;
     println!("Loaded {} codes into collection {}", count, collection_name);
 
     Ok(())

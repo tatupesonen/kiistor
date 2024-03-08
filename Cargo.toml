@@ -1,6 +1,6 @@
 [package]
 name = "kiistor"
-version = "0.1.8"
+version = "0.1.9"
 edition = "2021"
 authors = ["Tatu Pesonen <tatu@narigon.dev>"]
 description = "A small utility for loading game keys in/out of a PostgreSQL database"
