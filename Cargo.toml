@@ -1,8 +1,8 @@
 [package]
 name = "kiistor"
-version = "0.1.7"
+version = "0.1.8"
 edition = "2021"
-author = "Tatu Pesonen <tatu@narigon.dev>"
+authors = ["Tatu Pesonen <tatu@narigon.dev>"]
 description = "A small utility for loading game keys in/out of a PostgreSQL database"
 repository = "https://github.com/tatupesonen/kiistor"
 license-file = "LICENSE"
@@ -14,4 +14,8 @@ clap = { version = "4.5.2", features = ["derive"] }
 colored = "2.1.0"
 sqlx = { version = "0.7.3", features = ["runtime-tokio-rustls", "postgres"] }
 tabled = "0.15.0"
-tokio = { version = "1.36.0", features = ["full"] }
+tokio = { version = "1.36.0", features = ["rt", "macros", "rt-multi-thread"] }
+
+[profile.release]
+strip = true  # Automatically strip symbols from the binary.
+lto = true
