@@ -7,7 +7,7 @@
   </a>
 
 
-Small utility written in Rust designed to facilitate the loading of game keys in and out of a PostgreSQL database. It provides a simple command-line interface for managing them.
+kiistor (_/ˈkiːstɔr/, KEE-stor_) is a small utility written in Rust designed to facilitate the loading of game keys in and out of a PostgreSQL database. It provides a simple command-line interface for managing them.
 </p>
 
 [![Deploy](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml/badge.svg)](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml)
