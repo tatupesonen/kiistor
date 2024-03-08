@@ -17,6 +17,13 @@ kiistor (_/ˈkiːstɔr/, KEE-stor_) is a small utility written in Rust designed 
 - **Addition and Retrieval:** Allows adding new game keys to the database and retrieving existing keys.
 - **Easy-to-Use Interface:** Provides a user-friendly command-line interface for interacting with the utility.
 
+## Roadmap
+- [x] Adding keys via the CLI
+- [x] Showing a list of all keys
+- [ ] Compatibility with other databases
+- [ ] Encryption
+- [ ] Key access control 
+
 ## Installation
 Grab the latest release for your platform from the [releases](https://github.com/tatupesonen/kiistor/releases/latest) page
 
