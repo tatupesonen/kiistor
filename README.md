@@ -11,6 +11,7 @@ Small utility written in Rust designed to facilitate the loading of game keys in
 </p>
 
 [![Deploy](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml/badge.svg)](https://github.com/tatupesonen/kiistor/actions/workflows/release.yml)
+![Crates.io Version](https://img.shields.io/crates/v/kiistor)
 
 ## Features
 - **Addition and Retrieval:** Allows adding new game keys to the database and retrieving existing keys.
